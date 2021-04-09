@@ -8,8 +8,6 @@ def index(request):
     url = 'http://api.openweathermap.org/data/2.5/weather?q={}' \
           '&units=metric&lang=lang&appid=5b96a99b221f2256b435467d7f5371f3'
 
-
-
     if request.method == 'POST':
         form = CityForm(request.POST)
         form.save()
@@ -21,7 +19,6 @@ def index(request):
     weather_data = []
 
     for city in cities:
-
         city_weather = requests.get(url.format(city.name)).json()
 
         weather = {
