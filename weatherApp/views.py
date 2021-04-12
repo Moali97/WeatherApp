@@ -26,7 +26,7 @@ def index(request):
             'temperature': city_weather['main']['temp'],
             'description': city_weather['weather'][0]['description'],
             'icon': city_weather['weather'][0]['icon'],
-        }
+            }
 
         weather_data.append(weather)
 
