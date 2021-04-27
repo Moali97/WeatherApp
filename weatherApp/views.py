@@ -9,7 +9,13 @@ def index(request):
 
     if request.method == 'POST':
         form = CityForm(request.POST)
-        form.save()
+
+        if form.is_valid():
+            new_city = form.cleaned_data[‘name’]
+            city_count = objects.filter.(name=new_city).count()
+
+            if city_count == 0
+                form.save()
 
     form = CityForm()
 
