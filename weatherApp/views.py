@@ -12,9 +12,9 @@ def index(request):
 
         if form.is_valid():
             new_city = form.cleaned_data['name']
-            city_count = objects.filter.(name=new_city).count()
+            city_count = objects.filter(name=new_city).count()
 
-            if city_count == 0
+            if city_count == 0:
                 form.save()
 
     form = CityForm()
