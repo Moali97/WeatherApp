@@ -4,7 +4,7 @@ from .forms import CityForm
 from .models import City
 
 
-def index(request):
+def index(request, objects=None):
     url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=5b96a99b221f2256b435467d7f5371f3'
 
     if request.method == 'POST':
@@ -12,7 +12,7 @@ def index(request):
 
         if form.is_valid():
             new_city = form.cleaned_data['name']
-            city_count = objects.filter(name=new_city).count()
+            city_count = City.objects.filter(name=new_city).count()
 
             if city_count == 0:
                 form.save()
