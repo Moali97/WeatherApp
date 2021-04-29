@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>What's the weather like?</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css" />
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+
 </head>
-<body>
-    <section class="hero is-primary">
+    <body style="background-color:grey;">
+    <section class="hero is-dark">
         <div class="hero-body">
             <div class="container">
                 <h1 class="title">
@@ -72,7 +75,6 @@
             </div>
         </div>
     </section>
-    <footer class="footer">
-    </footer>
+
 </body>
 </html>
