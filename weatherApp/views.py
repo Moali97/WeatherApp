@@ -1,5 +1,5 @@
 import requests
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import CityForm
 from .models import City
 
@@ -38,3 +38,8 @@ def index(request, objects=None):
 
     context = {'weather_data': weather_data, 'form': form}
     return render(request, 'weatherApp/index.html', context)
+
+
+def delete(request, city_name):
+    City.objects.get(name=city_name).delete()
+    return redirect('index')
