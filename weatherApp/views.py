@@ -10,7 +10,7 @@ def index(request, objects=None):
     if request.method == 'POST':
         form = CityForm(request.POST)
 
-        if form.is_valid():
+        if form.is_valid()  :
             new_city = form.cleaned_data['name']
             city_count = City.objects.filter(name=new_city).count()
 
