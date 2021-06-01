@@ -10,7 +10,7 @@ def index(request, objects=None):
     if request.method == 'POST':
         form = CityForm(request.POST)
 
-        if form.is_valid()  :
+        if form.is_valid():
             new_city = form.cleaned_data['name']
             city_count = City.objects.filter(name=new_city).count()
 
@@ -24,7 +24,6 @@ def index(request, objects=None):
     weather_data = []
 
     for city in cities:
-
         city_weather = requests.get(url.format(city)).json()
 
         weather = {
@@ -32,11 +31,14 @@ def index(request, objects=None):
             'temperature': city_weather['main']['temp'],
             'description': city_weather['weather'][0]['description'],
             'icon': city_weather['weather'][0]['icon'],
-            }
+        }
 
         weather_data.append(weather)
 
-    context = {'weather_data': weather_data, 'form': form}
+    context = {'weather_data': weather_data,
+               'form': form
+               }
+
     return render(request, 'weatherApp/index.html', context)
 
 
