@@ -10,5 +10,5 @@
 
 .nav-right{
    float: right;
-   color: #000000;
+   color: #000000 !important;
 }
