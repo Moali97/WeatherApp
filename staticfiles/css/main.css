@@ -1,0 +1,14 @@
+.delete{
+  background: red;
+  line-height: 8em;
+  vertical-align: -20px;
+}
+
+.title{
+  text-align: center;
+}
+
+.nav-right{
+   float: right;
+   color: #000000 !important;
+}
