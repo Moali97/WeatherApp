@@ -2,4 +2,5 @@
 
 This is a weather app I created with Django, HTML, CSS and bootstrap.
 
-It gets data about your city of choice using the openweather api. 
+<h2>What it taught me<h2>
+I was able to learn how to use the requests library to get information from a webiste with the help of an application programming interface (API)
