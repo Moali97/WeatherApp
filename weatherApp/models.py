@@ -7,5 +7,6 @@ class City(models.Model):
     def __str__(self):
         return self.name
 
-    class Meta:  # changes plural of city to cities instead of citys
+    # changes plural of city to cities instead of citys
+    class Meta:
         verbose_name_plural = 'cities'
